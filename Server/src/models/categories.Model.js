@@ -14,14 +14,14 @@ export const getAllCategories = async () => {
 }
 export const getCategoryById = async (id) => {
     const result = await pool.query(`
-        selct * from categories where id=$1 
+        select * from categories where id=$1 
         `, [id])
     // sql injection
     return result.rows[0]  // return only one! = {} 
 }
 export const getCategoryByName = async (name) => {
     const result = await pool.query(`
-        selct * from categories where name=$1 
+        select * from categories where name=$1 
         `, [name])
     return result.rows[0]
 }
